@@ -79,6 +79,8 @@ ENV IBC_PATH /root/ibc
 ENV IBC_INI /root/ibc/config.ini
 ENV TWOFA_TIMEOUT_ACTION exit
 
+# Convert the line endings of the script
+RUN apt-get update && apt-get install -y dos2unix
 RUN dos2unix /root/scripts/*.sh
 RUN chmod a+x /root/scripts/*.sh
 
