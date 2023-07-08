@@ -79,5 +79,8 @@ ENV IBC_PATH /root/ibc
 ENV IBC_INI /root/ibc/config.ini
 ENV TWOFA_TIMEOUT_ACTION exit
 
+RUN dos2unix /root/scripts/*.sh
+RUN chmod a+x /root/scripts/*.sh
+
 # Start run script
 CMD ["/root/scripts/run.sh"]
